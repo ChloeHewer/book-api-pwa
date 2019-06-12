@@ -1,6 +1,10 @@
 import * as React from "react";
+import styles from "./greekGod.module.scss";
+import { IGreekGodData } from "../../data/data";
 
-export interface IProps {}
+export interface IProps {
+  greekGod: IGreekGodData;
+}
 
 export interface IState {}
 
@@ -8,12 +12,10 @@ class GreekGod extends React.Component<IProps, IState> {
   // state = { :  }
   render() {
     return (
-      <section>
-        <div>
-          Info on greek gods.... this will be the layout for the data for each
-          god
-        </div>
-      </section>
+      <article className={styles.godArticles}>
+        <h2>{this.props.greekGod.name}</h2>
+        <div>{this.props.greekGod.info}</div>
+      </article>
     );
   }
 }
