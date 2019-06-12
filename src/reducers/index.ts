@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import greekReducer, { IGreekState } from "./greek/greekReducer";
+import quizReducer, { IQuizState } from "./quiz/quizReducer";
 
 export interface IStore {
-  god: IGreekState;
+  quiz: IQuizState;
 }
 
 export default combineReducers({
-  god: greekReducer
+  quiz: quizReducer
 });

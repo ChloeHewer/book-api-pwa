@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./navBar.module.scss";
 
 export interface IProps {}
@@ -10,9 +11,15 @@ class NavBar extends React.Component<IProps, IState> {
   render() {
     return (
       <section className={styles.navBar}>
-        <div>Greek Gods</div>
-        <div>Quiz</div>
-        <div className={styles.lastDiv}>Sign in</div>
+        <NavLink className={styles.div} to={"/greekGods"}>
+          <div>Greek Gods</div>
+        </NavLink>
+        <NavLink className={styles.div} to={"/quiz"}>
+          <div>Quiz</div>
+        </NavLink>
+        <NavLink className={`${styles.div} ${styles.lastDiv}`} to={"/"}>
+          <div>Sign Out</div>
+        </NavLink>
       </section>
     );
   }

@@ -4,8 +4,8 @@ import { Provider } from "react-redux";
 import { Router } from "react-router";
 import store from "./store";
 import history from "./history";
-import GreekGods from "./containers/greekGodContainer/greekGod";
 import NavBar from "./containers/navBar/navBar";
+import Routes from "./routes";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
             <NavBar />
           </header>
           <main>
-            <GreekGods />
+            <Routes />
           </main>
         </div>
       </Router>
