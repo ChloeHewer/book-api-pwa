@@ -1,6 +1,7 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./navBar.module.scss";
+import logo from "../../images/logo_transparent.png";
 
 export interface IProps {}
 
@@ -11,15 +12,16 @@ class NavBar extends React.Component<IProps, IState> {
   render() {
     return (
       <section className={styles.navBar}>
-        <NavLink className={styles.div} to={"/greekGods"}>
-          <div>Greek Gods</div>
-        </NavLink>
-        <NavLink className={styles.div} to={"/quiz"}>
-          <div>Quiz</div>
-        </NavLink>
-        <NavLink className={`${styles.div} ${styles.lastDiv}`} to={"/"}>
-          <div>Sign Out</div>
-        </NavLink>
+        <span className={styles.logoFrame}>
+          <div className={styles.imgFrame}>
+            <img src={logo} alt="Logo" />
+          </div>
+          <p className={styles.text}>Find a book you're interested in today</p>
+        </span>
+        <span className={styles.searchFrame}>
+          <input type="search" placeholder="search for books..." />
+          <div>Search</div>
+        </span>
       </section>
     );
   }

@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import quizReducer, { IQuizState } from "./quiz/quizReducer";
+import bookReducer, { IBookState } from "./bookReducer/bookReducer";
 
 export interface IStore {
-  quiz: IQuizState;
+  books: IBookState;
 }
 
 export default combineReducers({
-  quiz: quizReducer
+  books: bookReducer
 });
