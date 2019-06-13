@@ -6,29 +6,41 @@ export interface IProps {
   books: IBook;
 }
 
-export interface IState {}
+export interface IState {
+  isShown: boolean;
+}
 
 class Books extends React.Component<IProps, IState> {
-  // state = { :  }
+  public state = { isShown: false };
+
   public render() {
+    const rotateStyle = this.state.isShown ? styles.cardRotated : "";
     return (
-      <article className={styles.book}>
-        <section className={styles.topSection}>
-          <h3 className={styles.title}>{this.props.books.volumeInfo.title}</h3>
-          <img
-            className={styles.image}
-            src={this.props.books.volumeInfo.imageLinks.thumbnail}
-          />
-        </section>
-        <p className={styles.author}>{this.props.books.volumeInfo.authors}</p>
-        <p>{this.props.books.volumeInfo.categories}</p>
-        <p>{this.props.books.volumeInfo.publishedDate}</p>
-        <p className={styles.description}>
-          {this.props.books.volumeInfo.description}
-        </p>
-      </article>
+      <div className={styles.scene}>
+        <article
+          onClick={this.handleCardClick}
+          className={`${rotateStyle} ${styles.card}`}
+        >
+          <div className={styles.cardFront}>
+            <img src={this.props.books.volumeInfo.imageLinks.thumbnail} />
+          </div>
+
+          <div className={styles.cardBack}>
+            <div>
+              <h2>{this.props.books.volumeInfo.title}</h2>
+              <div>{this.props.books.volumeInfo.authors}</div>
+              <div>{this.props.books.volumeInfo.publishedDate}</div>
+              <div>{this.props.books.volumeInfo.categories}</div>
+              <p>{this.props.books.volumeInfo.description}</p>
+            </div>
+          </div>
+        </article>
+      </div>
     );
   }
+  private handleCardClick = () => {
+    this.setState({ isShown: !this.state.isShown });
+  };
 }
 
 export default Books;
