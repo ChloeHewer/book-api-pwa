@@ -22,7 +22,7 @@ class Books extends React.Component<IProps, IState> {
           className={`${rotateStyle} ${styles.card}`}
         >
           <div className={styles.cardFront}>
-            <img src={this.props.books.volumeInfo.imageLinks.thumbnail} />
+            <img src={this.props.books.volumeInfo.imageLinks.thumbnail} alt={"book thumbnail"} />
           </div>
 
           <div className={styles.cardBack}>

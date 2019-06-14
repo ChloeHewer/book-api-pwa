@@ -40,3 +40,13 @@
 .cardRotated {
   transform: rotateY(180deg);
 }
+
+@media screen and (max-width: 600px) {
+  .scene{
+    width: 45vw;
+    margin: 5px;
+  }
+  %card{
+    width: 45vw;
+  }
+}

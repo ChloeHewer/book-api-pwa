@@ -1,11 +1,10 @@
 import * as React from "react";
-import { NavLink } from "react-router-dom";
 import styles from "./navBar.module.scss";
 import logo from "../../images/logo_transparent.png";
 
-export interface IProps {}
+export interface IProps { }
 
-export interface IState {}
+export interface IState { }
 
 class NavBar extends React.Component<IProps, IState> {
   // state = { :  }

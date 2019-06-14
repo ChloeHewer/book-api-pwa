@@ -6,7 +6,7 @@ import BooksComponent from "../../components/booksComponent/booksComponent";
 import styles from "./books.module.scss";
 import ChangeAuthor from "../../components/changeAuthor/changeAuthor";
 
-export interface IOwnProps {}
+export interface IOwnProps { }
 
 export interface IStateProps {
   books: IBook[];
@@ -29,20 +29,6 @@ class BooksContainer extends React.Component<IOwnProps & IStateProps, IState> {
     return (
       <div>
         <ChangeAuthor />
-        <section className={styles.forms}>
-          <form>
-            <fieldset>
-              <label className={styles.genre}>Select genre</label>
-              <select id="Genre">
-                <option value="Fiction">Fiction</option>
-                <option value="Literary">Literary</option>
-                <option value="Aeronautics">Aeronautics</option>
-                <option value="History">History</option>
-              </select>
-            </fieldset>
-          </form>
-        </section>
-
         <section className={styles.books}>
           {this.props.books.map((book, index) => (
             <BooksComponent key={index} books={book} />
