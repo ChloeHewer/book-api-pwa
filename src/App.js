@@ -6,6 +6,8 @@ import store from "./store";
 import history from "./history";
 import NavBar from "./containers/navBar/navBar";
 import Routes from "./routes";
+import BooksContainer from "./containers/bookContainer/books";
+import Books from "./components/booksComponent/booksComponent";
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
             <NavBar />
           </header>
           <main>
-            <Routes />
+            <BooksContainer />
           </main>
         </div>
       </Router>
